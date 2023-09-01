@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#FF3700B3"
+    android:layout_height="match_parent"
+    tools:context=".BottomSheet">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MediLab"
+        android:textSize="50sp"
+        android:layout_gravity="center"
+        android:textColor="@color/white"
+        android:layout_marginBottom="250dp"
+        android:textStyle="bold"/>
+
+    <FrameLayout
+        android:id="@+id/bottomSheet"
+        android:layout_width="match_parent"
+        android:layout_height="420dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+        android:background="@drawable/rounded">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="18dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_remove_24"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center|top"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Welcome"
+                android:textSize="27sp"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Get Started with Your Account"
+                android:textSize="17sp"
+                android:textAlignment="center"
+                android:textStyle="normal"
+                android:textColor="@color/black"/>
+
+            <Button
+                android:id="@+id/bottomLoginButton"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="Sign In"
+                android:textSize="18sp"
+                android:layout_marginLeft="70dp"
+                android:layout_marginRight="70dp"
+                android:textAllCaps="false"
+                android:layout_marginTop="25dp"
+                android:textColor="@color/white"
+                android:background="@drawable/button_bottom_sheet"
+
+                />
+
+            <Button
+                android:id="@+id/bottomRegisterButton"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="Sign Up"
+                android:textSize="18sp"
+                android:layout_marginLeft="70dp"
+                android:layout_marginRight="70dp"
+                android:textAllCaps="false"
+                android:layout_marginTop="25dp"
+                android:textColor="@color/white"
+                android:backgroundTint="#3690D8"
+                android:background="@drawable/button_bottom_sheet"
+                />
+
+            <Button
+                android:id="@+id/btnHome"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="Check Labs"
+                android:textSize="18sp"
+                android:layout_marginLeft="70dp"
+                android:layout_marginRight="70dp"
+                android:textAllCaps="false"
+                android:layout_marginTop="25dp"
+                android:textColor="@color/white"
+                android:backgroundTint="#3690D8"
+                android:background="@drawable/button_bottom_sheet"
+                android:layout_marginBottom="10dp"/>
+
+
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

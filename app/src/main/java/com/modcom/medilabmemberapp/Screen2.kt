@@ -13,7 +13,7 @@ class Screen2 : AppCompatActivity() {
         val next = findViewById<TextView>(R.id.next1)
         next.setOnClickListener {
             // Intent message to Screen2
-            val intent = Intent(applicationContext,MainActivity::class.java)
+            val intent = Intent(applicationContext,BottomSheet::class.java)
             startActivity(intent)
 
             // Create Screen3 Activity with different design

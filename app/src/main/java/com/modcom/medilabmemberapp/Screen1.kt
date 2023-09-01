@@ -20,7 +20,10 @@ class Screen1 : AppCompatActivity() {
         val skip = findViewById<TextView>(R.id.skip)
         skip.setOnClickListener {
             // Intent message to Screen2
-            val intent = Intent(applicationContext,MemberSignUp::class.java)
+//            val intent = Intent(applicationContext,LoginActivity::class.java)
+//            startActivity(intent)
+
+            val intent = Intent(applicationContext,LabTestsActivity::class.java)
             startActivity(intent)
         }
 

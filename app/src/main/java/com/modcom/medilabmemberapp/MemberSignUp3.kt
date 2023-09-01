@@ -7,7 +7,11 @@ import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.core.view.get
+import com.modcom.medilabmemberapp.constants.Constants
+import com.modcom.medilabmemberapp.helpers.ApiHelper
 import com.modcom.medilabmemberapp.helpers.PrefsHelper
+import org.json.JSONArray
+import org.json.JSONObject
 import java.util.*
 
 class MemberSignUp3 : AppCompatActivity() {
@@ -53,9 +57,6 @@ class MemberSignUp3 : AppCompatActivity() {
 
         }
 
-
-
-
         // find register1 button and proceed to MemberSignUp2
         val register3 = findViewById<Button>(R.id.register3)
         register3.setOnClickListener {
@@ -70,15 +71,37 @@ class MemberSignUp3 : AppCompatActivity() {
             val password = PrefsHelper.getPrefs(applicationContext, "password")
             val location_id = PrefsHelper.getPrefs(applicationContext, "location_id")
 
+            // api -> String
+            // data(body) -> JSONObject
+            // CallBack Interface -> JSONObject
+            val api = Constants.BASE_URL + "/member_signup"
+            val body = JSONObject()
+            body.put("surname",surname.toString() )
+            body.put("others",others.toString() )
+            body.put("email",email.toString() )
+            body.put("phone",phone.toString() )
+            body.put("dob",dob.toString() )
+            body.put("password",password.toString() )
+            body.put("gender",gender.toString() )
+            body.put("location_id",location_id.toString() )
 
-            Toast.makeText(applicationContext, "Surname : $surname", Toast.LENGTH_SHORT).show()
-            Toast.makeText(applicationContext, "Others : $others", Toast.LENGTH_SHORT).show()
-            Toast.makeText(applicationContext, "Gender : $gender", Toast.LENGTH_SHORT).show()
-            Toast.makeText(applicationContext, "Email : $email", Toast.LENGTH_SHORT).show()
-            Toast.makeText(applicationContext, "Phone : $phone", Toast.LENGTH_SHORT).show()
-            Toast.makeText(applicationContext, "DOB : $dob", Toast.LENGTH_SHORT).show()
-            Toast.makeText(applicationContext, "Password : $password", Toast.LENGTH_SHORT).show()
-            Toast.makeText(applicationContext, "Location ID : $location_id", Toast.LENGTH_SHORT).show()
+            // create an object from ApiHelper class
+            val helper = ApiHelper(applicationContext)
+            helper.post(api, body, object: ApiHelper.CallBack{
+                override fun onSuccess(result: JSONArray?) {
+                    TODO("Not yet implemented")
+                }
+
+                override fun onSuccess(result: JSONObject?) {
+                    Toast.makeText(applicationContext, "${result.toString()}", Toast.LENGTH_SHORT).show()
+                }
+
+                override fun onFailure(result: String?) {
+                    Toast.makeText(applicationContext, "${result.toString()}", Toast.LENGTH_SHORT).show()
+                }
+            })
+
+
 
         }
 
