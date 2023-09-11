@@ -1,5 +1,6 @@
 package com.modcom.medilabmemberapp
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.provider.SyncStateContract.Constants
 import android.text.Editable
@@ -16,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.GsonBuilder
 import com.modcom.medilabmemberapp.adapters.LabAdapter
 import com.modcom.medilabmemberapp.helpers.ApiHelper
+import com.modcom.medilabmemberapp.helpers.NetworkHelper
 import com.modcom.medilabmemberapp.models.Lab
 import org.json.JSONArray
 import org.json.JSONObject
@@ -27,6 +29,19 @@ class SearchFragment : Fragment() {
     lateinit var recyclerView: RecyclerView
     lateinit var labAdapter: LabAdapter
 
+
+    private fun showAlertDialog(){
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setTitle("Internet Check")
+            .setMessage("Please Check Your Internet Connection")
+            .setPositiveButton("Yes"){dialog, which ->
+                dialog.dismiss()
+            }
+
+        val alertDialog: AlertDialog = builder.create()
+        alertDialog.show()
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -35,6 +50,19 @@ class SearchFragment : Fragment() {
         // 1. find recyclerView
 
         val view = inflater.inflate(R.layout.fragment_search, container, false)
+
+        // Check Internet
+        if(NetworkHelper.isInternetConnected(requireContext())){
+            Toast.makeText(requireContext(), "You are Connected", Toast.LENGTH_SHORT).show()
+        }
+        else{
+            Toast.makeText(requireContext(), "You are not Connected", Toast.LENGTH_SHORT).show()
+            // create a dialog box to alert no internet connection
+            showAlertDialog()
+        }
+
+
+
         recyclerView = view.findViewById(R.id.recyclerView)
         labAdapter = LabAdapter(requireContext())
         recyclerView.layoutManager = LinearLayoutManager(context)

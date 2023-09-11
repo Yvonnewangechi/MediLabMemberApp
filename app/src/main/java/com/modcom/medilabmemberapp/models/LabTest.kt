@@ -1,13 +1,13 @@
 package com.modcom.medilabmemberapp.models
 
-data class LabTest(
-    val availability: String,
-    val lab_id: Int,
-    val more_info: String,
-    val reg_date: String,
-    val test_cost: Int,
-    val test_description: String,
-    val test_discount: Int,
-    val test_id: Int,
-    val test_name: String
-)
+ class LabTest(
+     var availability: String = "",
+     var lab_id: Int = 0,
+     var more_info: String = "",
+     var reg_date: String = "",
+     var test_cost: Int = 0,
+     var test_description: String = "",
+     var test_discount: Int = 0,
+     var test_id: Int = 0,
+     var test_name: String = ""
+ )

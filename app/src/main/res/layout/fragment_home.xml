@@ -26,6 +26,33 @@
                 android:textSize="30dp"
                 android:textColor="@color/black"
                 />
+            <TextView
+                android:id="@+id/textNotLogged"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:text="Not Logged In"
+                android:textSize="30dp"
+                android:textColor="@color/black"
+                />
+            <Button
+                android:id="@+id/btnNotLoggedIn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/textWelcome"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:text="Login"
+                android:backgroundTint="@color/black"/>
+            <Button
+                android:id="@+id/btnLogout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/textWelcome"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:text="Logout"
+                android:backgroundTint="@color/black"/>
 
             <GridLayout
                 android:layout_width="match_parent"

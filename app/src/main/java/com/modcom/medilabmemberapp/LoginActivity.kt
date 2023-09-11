@@ -1,5 +1,6 @@
 package com.modcom.medilabmemberapp
 
+import android.app.AlertDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,14 +10,38 @@ import android.widget.Toast
 import com.modcom.medilabmemberapp.constants.Constants
 import com.modcom.medilabmemberapp.helpers.ApiHelper
 import com.modcom.medilabmemberapp.helpers.DialogHelper
+import com.modcom.medilabmemberapp.helpers.NetworkHelper
 import com.modcom.medilabmemberapp.helpers.PrefsHelper
 import org.json.JSONArray
 import org.json.JSONObject
 
 class LoginActivity : AppCompatActivity() {
+
+    private fun showAlertDialog(){
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Internet Check")
+            .setMessage("Please Check Your Internet Connection")
+            .setPositiveButton("Yes"){dialog, which ->
+                dialog.dismiss()
+            }
+
+        val alertDialog: AlertDialog = builder.create()
+        alertDialog.show()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+        // Check Internet
+        if(NetworkHelper.isInternetConnected(applicationContext)){
+            Toast.makeText(applicationContext, "You are Connected", Toast.LENGTH_SHORT).show()
+        }
+        else{
+            Toast.makeText(applicationContext, "You are not Connected", Toast.LENGTH_SHORT).show()
+            // create a dialog box to alert no internet connection
+            showAlertDialog()
+        }
 
         // find SurnameEditText and passwordEditText
         val surname: EditText = findViewById(R.id.editSurname)
@@ -58,10 +83,10 @@ class LoginActivity : AppCompatActivity() {
                         val surname = member.getString("surname")
                         val phone = member.getString("phone")
 
-                        PrefsHelper.savePrefs(applicationContext, "member_id", member_id)
-                        PrefsHelper.savePrefs(applicationContext, "email", email)
-                        PrefsHelper.savePrefs(applicationContext, "surname", surname)
-                        PrefsHelper.savePrefs(applicationContext, "phone", phone)
+                        PrefsHelper.savePrefs(applicationContext, "LoggedMember_id", member_id)
+                        PrefsHelper.savePrefs(applicationContext, "LoggedEmail", email)
+                        PrefsHelper.savePrefs(applicationContext, "LoggedSurname", surname)
+                        PrefsHelper.savePrefs(applicationContext, "LoggedPhone", phone)
 
 
                         val intentHome = Intent(applicationContext, HomeActivity::class.java)
