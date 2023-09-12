@@ -55,8 +55,8 @@ class SQLiteCartHelper(context: Context) :
 
     // INSERT CART ITEM
     //insert cart item
-    fun insert(test_id: String,test_name :String,test_cost:String,
-               test_description :String,lab_id :String){
+    fun insert(test_id: Int?,test_name :String?,test_cost:Int?,
+               test_description :String?,lab_id :Int?){
         val db = this.writableDatabase
         val values = ContentValues()
         values.put("test_id",test_id)
@@ -68,14 +68,14 @@ class SQLiteCartHelper(context: Context) :
         //call the db and save the values
         val result :Long = db.insert(DATABASE_TABLE,null,values)
 
-        // Toast.makeText(context, "RESULT: $result", Toast.LENGTH_SHORT).show()
-
         if (result < 1){
             Toast.makeText(context, "Item Already in the cart", Toast.LENGTH_SHORT).show()
         }
         else{
             Toast.makeText(context, "Item added  to cart successfully", Toast.LENGTH_SHORT).show()
         }
+
+//        Toast.makeText(context, "Item Added to Cart", Toast.LENGTH_SHORT).show()
 
     }//end insert
 
@@ -146,8 +146,5 @@ class SQLiteCartHelper(context: Context) :
 //clearById
 //total cost
 //getALL ITEMS
-
-
-
 
 }
