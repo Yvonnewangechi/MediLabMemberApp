@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/loginbk"
+    android:background="@drawable/background_fragments"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".MemberSignUp">
@@ -88,5 +88,14 @@
 
 
     </androidx.cardview.widget.CardView>
+    <TextView
+
+        android:id="@+id/AlreadyHaveAccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Already have an account?"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="17dp"/>
 
 </LinearLayout>

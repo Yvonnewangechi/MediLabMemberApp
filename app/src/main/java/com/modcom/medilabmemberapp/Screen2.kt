@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import com.modcom.medilabmemberapp.helpers.PrefsHelper
 
 class Screen2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -13,6 +14,9 @@ class Screen2 : AppCompatActivity() {
         val next = findViewById<TextView>(R.id.next1)
         next.setOnClickListener {
             // Intent message to Screen2
+            //save a value on prefs
+            PrefsHelper.savePrefs(applicationContext,"screen2Clicked","true")
+
             val intent = Intent(applicationContext,BottomSheet::class.java)
             startActivity(intent)
 

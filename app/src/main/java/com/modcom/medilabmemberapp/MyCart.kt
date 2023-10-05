@@ -39,6 +39,8 @@ class MyCart : AppCompatActivity() {
             }
             else{
                 Toast.makeText(applicationContext, "Proceeding to Check Out", Toast.LENGTH_SHORT).show()
+                val intent = Intent(applicationContext,CheckOutStep1::class.java)
+                startActivity(intent)
             }
 
         } // end listener
@@ -77,6 +79,16 @@ class MyCart : AppCompatActivity() {
         }
 
         // Other Implementation Done Here...
+
+        if (item.itemId == R.id.login){
+            val intent = Intent(applicationContext,LoginActivity::class.java)
+            startActivity(intent)
+        }
+
+        if (item.itemId == R.id.back){
+            val intent = Intent(applicationContext,HomeActivity::class.java)
+            startActivity(intent)
+        }
 
         return true
     }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/loginbk"
+    android:background="@drawable/background_fragments"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".MemberSignUp3">

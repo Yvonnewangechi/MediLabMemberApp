@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.modcom.medilabmemberapp.R
 import com.modcom.medilabmemberapp.SingleLabTest
+import com.modcom.medilabmemberapp.helpers.PrefsHelper
 import com.modcom.medilabmemberapp.helpers.SQLiteCartHelper
 import com.modcom.medilabmemberapp.models.LabTest
 
@@ -44,6 +45,15 @@ class LabTestCartAdapter(var context: Context) :
         tvLabTestName.text = singleLab.test_name
         tvLabTestCost.text = "KSHS "+ singleLab.test_cost.toString()
         tvLabTestAvalability.text = "Availability : " + singleLab.availability
+
+        //Save Lab_id and test_id to the prefs
+        val lab_id = singleLab.lab_id
+        PrefsHelper.savePrefs(context,"cart_lab_id",lab_id.toString())
+
+        val test_id = singleLab.test_id
+        PrefsHelper.savePrefs(context,"cart_test_id",test_id.toString())
+
+
 
         // Click on the Button to remove item from the cart
         val removeBtn : Button = holder.itemView.findViewById(R.id.remove)

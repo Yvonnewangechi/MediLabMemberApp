@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="6dp"
+    app:cardCornerRadius="20dp"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/person"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="8dp"
+            android:elevation="4dp"
+            />
+
+
+        <TextView
+            android:id="@+id/tvSurname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Surname"
+            android:layout_marginLeft="12dp"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@color/black" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvDob"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Date Of Birth"
+                android:textSize="14sp"
+                android:layout_marginLeft="12dp"
+                android:textColor="#2196F3"
+                android:layout_marginTop="10dp"
+                />
+
+            <TextView
+                android:id="@+id/tvRegDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Reg Date"
+                android:layout_marginLeft="170dp"
+                android:textSize="17sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

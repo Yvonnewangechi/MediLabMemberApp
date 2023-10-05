@@ -36,6 +36,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="CheckOut"
+            android:textSize="20dp"
+            android:textColor="@color/white"
             android:padding="10dp"
             android:layout_marginLeft="60dp"
             android:layout_marginRight="60dp"

@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import com.modcom.medilabmemberapp.helpers.NetworkHelper
 import com.modcom.medilabmemberapp.helpers.PrefsHelper
@@ -14,6 +15,13 @@ class MemberSignUp : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_member_sign_up)
+
+        //intent to register
+        val textLogin : TextView = findViewById(R.id.AlreadyHaveAccount)
+        textLogin.setOnClickListener {
+            val intent = Intent(applicationContext,LoginActivity::class.java)
+            startActivity(intent)
+        }
 
         // Check Internet
         if(NetworkHelper.isInternetConnected(applicationContext)){

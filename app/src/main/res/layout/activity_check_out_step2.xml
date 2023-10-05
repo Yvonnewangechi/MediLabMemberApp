@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background_fragments"
+    tools:context=".CheckOutStep2">
+
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="20dp"
+        android:background="@drawable/custom_background">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal"
+            android:padding="24dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Latitude"
+                android:textSize="30sp"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textColor="@color/app_color"/>
+
+            <EditText
+                android:id="@+id/editTextLatitude"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Here"
+                android:layout_gravity="center_horizontal"
+                android:enabled="false"
+                android:textStyle="bold"
+                android:textColor="@color/app_color"
+                android:layout_marginTop="10dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Longitude"
+                android:textSize="30sp"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textColor="@color/app_color"/>
+
+
+
+            <EditText
+                android:id="@+id/editTextLongitude"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint=" Here"
+                android:layout_gravity="center_horizontal"
+                android:enabled="false"
+                android:textStyle="bold"
+                android:textColor="@color/app_color"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:id="@+id/location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Your Current Location:"
+                android:textSize="25sp"
+                android:textAlignment="center"
+
+                android:textColor="@color/app_color"/>
+
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/getLocation"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Get Location"
+        android:textSize="17sp"
+        android:layout_marginBottom="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/white"
+        android:background="@drawable/button_background"/>
+
+    <Button
+        android:id="@+id/Complete"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:visibility="invisible"
+        android:text="Book"
+        android:textSize="17sp"
+        android:layout_marginBottom="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/white"
+        android:background="@drawable/button_background"/>
+
+
+
+
+</LinearLayout>

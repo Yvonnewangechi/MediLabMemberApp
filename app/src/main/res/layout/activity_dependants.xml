@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/background_fragments"
+    tools:context=".DependantsActivity">
+
+    <!--    searchView-->
+    <!--    recyclerView-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--        <androidx.appcompat.widget.SearchView-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_margin="16dp"-->
+        <!--            android:id="@+id/search"-->
+        <!--            app:iconifiedByDefault="false"-->
+        <!--            app:searchHintIcon="@null"-->
+        <!--            app:queryHint="Search Labs..."-->
+        <!--            android:focusable="false"-->
+        <!--            app:closeIcon="@drawable/baseline_clear_24"-->
+        <!--            app:searchIcon="@drawable/baseline_search_24"-->
+        <!--            android:background="@drawable/search_background"/>-->
+
+
+        <EditText
+            android:id="@+id/search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/search_background"
+            android:drawableLeft="@drawable/baseline_search_24"
+            android:hint="Search Dependant"
+            android:padding="8dp" />
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_below="@+id/search"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/single_dependant"/>
+
+
+    </RelativeLayout>
+
+
+
+
+</FrameLayout>

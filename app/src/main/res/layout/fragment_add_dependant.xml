@@ -3,15 +3,109 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/background_fragments"
     tools:context=".AddDependantFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Add Dependant Fragment"
-        android:textSize="50dp"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:orientation="vertical">
 
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            app:cardCornerRadius="30dp"
+            app:cardElevation="20dp"
+            android:background="@drawable/custom_background">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center_horizontal"
+                android:padding="24dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Add Dependant"
+                    android:textSize="30sp"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:textColor="@color/app_color"/>
+
+
+                <EditText
+                    android:id="@+id/editSurname"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:background="@drawable/custom_background"
+                    android:drawableLeft="@drawable/baseline_person_24"
+                    android:drawablePadding="8dp"
+                    android:hint="Surname"
+                    android:padding="8dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/cardview_dark_background"
+                    android:layout_marginTop="30dp"/>
+
+                <EditText
+                    android:id="@+id/editOthers"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:background="@drawable/custom_background"
+                    android:drawableLeft="@drawable/baseline_person_24"
+                    android:drawablePadding="8dp"
+                    android:hint="Others"
+                    android:padding="8dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/cardview_dark_background"
+                    android:layout_marginTop="30dp"/>
+
+
+
+                <Button
+                    android:id="@+id/buttonDatePicker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:text="Date Of Birth"
+                    android:textAllCaps="false"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="17sp"
+                    android:layout_marginTop="28dp"
+                    android:textColor="@color/white"
+                    android:padding="6dp"
+                    android:background="@drawable/button_background"/>
+
+                <EditText
+                    android:id="@+id/editTextDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Date Here"
+                    android:layout_gravity="center_horizontal"
+                    android:enabled="false"
+                    android:textStyle="bold"
+                    android:textColor="@color/app_color"
+                    android:layout_marginTop="10dp"/>
+
+
+
+
+                <Button
+                    android:id="@+id/buttonAddDependant"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="Add Dependant"
+                    android:textSize="17sp"
+                    android:layout_marginTop="28dp"
+                    android:textColor="@color/white"
+                    android:background="@drawable/button_background"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
 
 </FrameLayout>

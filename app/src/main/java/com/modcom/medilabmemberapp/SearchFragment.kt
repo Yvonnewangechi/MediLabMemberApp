@@ -1,6 +1,7 @@
 package com.modcom.medilabmemberapp
 
 import android.app.AlertDialog
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.provider.SyncStateContract.Constants
 import android.text.Editable
@@ -12,6 +13,7 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.SearchView
 import android.widget.Toast
+import androidx.core.app.ActivityCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.GsonBuilder
@@ -42,6 +44,21 @@ class SearchFragment : Fragment() {
         alertDialog.show()
     }
 
+    //request location permission function
+    fun requestLocationPermission(){
+        if (ActivityCompat.checkSelfPermission(requireContext(),
+                android.Manifest.permission.ACCESS_FINE_LOCATION) !=
+            PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(requireActivity(),
+               arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION,
+                android.Manifest.permission.ACCESS_COARSE_LOCATION),123)
+        }//end if
+        else{
+            Toast.makeText(requireContext(), "Location permission Granted", Toast.LENGTH_SHORT).show()
+
+        }
+    } //end function
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -52,6 +69,9 @@ class SearchFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_search, container, false)
 
         // Check Internet
+
+        //===request locationPermission Function
+        requestLocationPermission()
         if(NetworkHelper.isInternetConnected(requireContext())){
             Toast.makeText(requireContext(), "You are Connected", Toast.LENGTH_SHORT).show()
         }
