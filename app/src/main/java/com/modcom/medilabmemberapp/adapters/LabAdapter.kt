@@ -70,6 +70,7 @@ class LabAdapter(var context: Context) :
     // The function will get data from the API and pass to the ItemList
 
     fun setListItems(data: List<Lab>){
+
         itemList = data
         notifyDataSetChanged()
     }

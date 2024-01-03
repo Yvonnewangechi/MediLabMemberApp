@@ -66,7 +66,7 @@ class LoginActivity : AppCompatActivity() {
             body.put("surname",surname.text.toString())
             body.put("password", password.text.toString())
 
-            val helper = ApiHelper(applicationContext)
+            val  helper = ApiHelper(applicationContext)
             helper.post(api, body, object : ApiHelper.CallBack{
                 override fun onSuccess(result: JSONArray?) {
                     TODO("Not yet implemented")
